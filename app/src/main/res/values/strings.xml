@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">ZalZal</string>
+    <string name="flexible_title">flexible_title</string>
+
+    <string name="loading">로딩중입니다.</string>
+    <string name="network_error">네트워크 연결이 원활하지 않습니다.</string>
+    <string name="backPressed">\'뒤로\'버튼을 한번 더 누르시면 종료됩니다.</string>
+    <string name="googleSingInError">정상적으로 로그인 하지 못했습니다\n관리자에게 문의해주세요</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+
+    <string name="login_tv_or">or</string>
+    <string name="login_et_email">이메일</string>
+    <string name="login_et_pw">비밀번호</string>
+    <string name="login_tv_user">아직 회원이 아니신가요?</string>
+    <string name="login_tv_bar">|</string>
+    <string name="login_tv_signup">회원가입</string>
+    <string name="login_empty_email">이메일을 입력해주세요</string>
+    <string name="login_empty_pw">비밀번호를 입력해주세요</string>
+
+    <string name="signup_et_nickname">닉네임</string>
+    <string name="signup_et_email">이메일</string>
+    <string name="signup_et_pw">비밀번호</string>
+    <string name="signup_et_pw_confirm">비밀번호 확인</string>
+    <string name="signup_tv_already_user">이미 회원이신가요?</string>
+    <string name="signup_tv_bar">|</string>
+    <string name="signup_tv_login">로그인</string>
+    <string name="signup_tv_empty_nickname">닉네임을 입력하세요</string>
+    <string name="signup_tv_empty_email">이메일을 입력하세요</string>
+    <string name="signup_tv_empty_pw">비밀번호를 입력하세요</string>
+    <string name="signup_tv_empty_pw_confirm">비밀번호를 한번 더 입력하세요</string>
+    <string name="signup_tv_duplicate_nickname">중복된 닉네임입니다</string>
+    <string name="signup_tv_duplicate_email">중복된 메일입니다</string>
+    <string name="signup_tv_match_nickname">닉네임이 형식에 맞지 않습니다</string>
+    <string name="signup_tv_match_email">이메일이 형식에 맞지 않습니다</string>
+    <string name="signup_tv_match_pw">비밀번호가 형식에 맞지 않습니다</string>
+    <string name="signup_tv_incorrect_pw">비밀번호가 일치하지 않습니다</string>
+    <string name="signup_flag_can_signup">회원가입 조건에 모두 만족해야 합니다</string>
+
+</resources>
