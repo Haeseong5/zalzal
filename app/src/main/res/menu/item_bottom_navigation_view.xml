@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/navigation_menu1"
+        android:icon="@drawable/selector_home"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:title="Home" />
+    <item
+        android:id="@+id/navigation_menu2"
+        android:icon="@drawable/selector_like"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:title="Like" />
+    <item
+        android:id="@+id/navigation_menu3"
+        android:icon="@drawable/selector_pick"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:title="Pick" />
+    <item
+        android:id="@+id/navigation_menu4"
+        android:icon="@drawable/selector_me"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:title="Me" />
+<!--    <item-->
+<!--        android:id="@+id/navigation_menu1"-->
+<!--        android:icon="@drawable/selector_home"-->
+<!--        app:showAsAction="ifRoom"-->
+<!--        android:enabled="true"-->
+<!--        android:title="Home" />-->
+<!--    <item-->
+<!--        android:id="@+id/navigation_menu2"-->
+<!--        android:icon="@drawable/selector_like"-->
+<!--        app:showAsAction="ifRoom"-->
+<!--        android:enabled="true"-->
+<!--        android:title="Like" />-->
+<!--    <item-->
+<!--        android:id="@+id/navigation_menu3"-->
+<!--        android:icon="@drawable/selector_pick"-->
+<!--        app:showAsAction="ifRoom"-->
+<!--        android:enabled="true"-->
+<!--        android:title="Pick" />-->
+<!--    <item-->
+<!--        android:id="@+id/navigation_menu4"-->
+<!--        android:icon="@drawable/selector_me"-->
+<!--        app:showAsAction="ifRoom"-->
+<!--        android:enabled="true"-->
+<!--        android:title="Me" />-->
+</menu>
