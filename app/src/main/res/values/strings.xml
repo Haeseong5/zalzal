@@ -35,5 +35,6 @@
     <string name="signup_tv_match_pw">비밀번호가 형식에 맞지 않습니다</string>
     <string name="signup_tv_incorrect_pw">비밀번호가 일치하지 않습니다</string>
     <string name="signup_flag_can_signup">회원가입 조건에 모두 만족해야 합니다</string>
+    <string name="home_title">프로 집콕러\n당신을 위한 추천</string>
 
 </resources>

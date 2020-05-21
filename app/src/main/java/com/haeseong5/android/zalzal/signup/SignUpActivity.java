@@ -61,15 +61,15 @@
 //
 //            @Override
 //            public void onTextChanged(CharSequence s, int start, int before, int count) {
-//                String nickname = mEtNickname.getText().toString();
+//                String nickname = mEtNickname.getTitle().toString();
 //                if(nickname.length()==0){
 //                    mLlNickname.setBackgroundResource(R.drawable.bg_border_bottom_red);
-//                    mTvValidateNickname.setText(getString(R.string.signup_tv_empty_nickname));
+//                    mTvValidateNickname.setTitle(getString(R.string.signup_tv_empty_nickname));
 //                    mTvValidateNickname.setVisibility(View.VISIBLE);
 //                    mFlagNickname = true;
 //                }else if(!Pattern.matches("^[가-힣A-Za-z0-9]{1,20}$", nickname)){
 //                    mLlNickname.setBackgroundResource(R.drawable.bg_border_bottom_red);
-//                    mTvValidateNickname.setText(getString(R.string.signup_tv_match_nickname));
+//                    mTvValidateNickname.setTitle(getString(R.string.signup_tv_match_nickname));
 //                    mTvValidateNickname.setVisibility(View.VISIBLE);
 //                    mFlagNickname = true;
 //                }else{
@@ -93,15 +93,15 @@
 //
 //            @Override
 //            public void onTextChanged(CharSequence s, int start, int before, int count) {
-//                String email = mEtEmail.getText().toString();
+//                String email = mEtEmail.getTitle().toString();
 //                if(email.length()==0){
 //                    mLlEmail.setBackgroundResource(R.drawable.bg_border_bottom_red);
-//                    mTvValidateEmail.setText(getString(R.string.signup_tv_empty_email));
+//                    mTvValidateEmail.setTitle(getString(R.string.signup_tv_empty_email));
 //                    mTvValidateEmail.setVisibility(View.VISIBLE);
 //                    mFlagEmail = true;
 //                }else if(!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()){
 //                    mLlEmail.setBackgroundResource(R.drawable.bg_border_bottom_red);
-//                    mTvValidateEmail.setText(getString(R.string.signup_tv_match_email));
+//                    mTvValidateEmail.setTitle(getString(R.string.signup_tv_match_email));
 //                    mTvValidateEmail.setVisibility(View.VISIBLE);
 //                    mFlagEmail = true;
 //                }else{
@@ -125,15 +125,15 @@
 //
 //            @Override
 //            public void onTextChanged(CharSequence s, int start, int before, int count) {
-//                String pw = mEtPw.getText().toString();
+//                String pw = mEtPw.getTitle().toString();
 //                if(pw.length()==0){
 //                    mLlPw.setBackgroundResource(R.drawable.bg_border_bottom_red);
-//                    mTvValidatePw.setText(getString(R.string.signup_tv_empty_pw));
+//                    mTvValidatePw.setTitle(getString(R.string.signup_tv_empty_pw));
 //                    mTvValidatePw.setVisibility(View.VISIBLE);
 //                    mFlagPw = true;
 //                }else if(!Pattern.matches("^[a-zA-Z0-9!@.#$%^&*?_~]{4,20}$", pw)){
 //                    mLlPw.setBackgroundResource(R.drawable.bg_border_bottom_red);
-//                    mTvValidatePw.setText(getString(R.string.signup_tv_match_pw));
+//                    mTvValidatePw.setTitle(getString(R.string.signup_tv_match_pw));
 //                    mTvValidatePw.setVisibility(View.VISIBLE);
 //                    mFlagPw = true;
 //                }else{
@@ -157,16 +157,16 @@
 //
 //            @Override
 //            public void onTextChanged(CharSequence s, int start, int before, int count) {
-//                String pw = mEtPw.getText().toString();
-//                String pwConfirm = mEtPwConfirm.getText().toString();
+//                String pw = mEtPw.getTitle().toString();
+//                String pwConfirm = mEtPwConfirm.getTitle().toString();
 //                if(pwConfirm.length()==0){
 //                    mLlPwConfirm.setBackgroundResource(R.drawable.bg_border_bottom_red);
-//                    mTvValidatePwConfirm.setText(getString(R.string.signup_tv_empty_pw_confirm));
+//                    mTvValidatePwConfirm.setTitle(getString(R.string.signup_tv_empty_pw_confirm));
 //                    mTvValidatePwConfirm.setVisibility(View.VISIBLE);
 //                    mFlagPwConfirm = true;
 //                }else if(!pw.equals(pwConfirm)){
 //                    mLlPwConfirm.setBackgroundResource(R.drawable.bg_border_bottom_red);
-//                    mTvValidatePwConfirm.setText(getString(R.string.signup_tv_incorrect_pw));
+//                    mTvValidatePwConfirm.setTitle(getString(R.string.signup_tv_incorrect_pw));
 //                    mTvValidatePwConfirm.setVisibility(View.VISIBLE);
 //                    mFlagPwConfirm = true;
 //                }else{
@@ -189,9 +189,9 @@
 //        if(mFlagNickname||mFlagEmail||mFlagPw||mFlagPwConfirm){
 //            showCustomToast(getString(R.string.signup_flag_can_signup));
 //        }else{
-//            String nickname = mEtNickname.getText().toString();
-//            String email = mEtEmail.getText().toString();
-//            String pw = mEtPw.getText().toString();
+//            String nickname = mEtNickname.getTitle().toString();
+//            String email = mEtEmail.getTitle().toString();
+//            String pw = mEtPw.getTitle().toString();
 //
 //            showProgressDialog();
 //            SignUpService signUpService = new SignUpService(this);
@@ -211,16 +211,16 @@
 //                startActivity(signUpIntent);
 //                break;
 //            case R.id.sign_up_iv_nickname_close:
-//                mEtNickname.setText("");
+//                mEtNickname.setTitle("");
 //                break;
 //            case R.id.sign_up_iv_email_close:
-//                mEtEmail.setText("");
+//                mEtEmail.setTitle("");
 //                break;
 //            case R.id.sign_up_iv_pw_close:
-//                mEtPw.setText("");
+//                mEtPw.setTitle("");
 //                break;
 //            case R.id.sign_up_iv_pw_confirm_close:
-//                mEtPwConfirm.setText("");
+//                mEtPwConfirm.setTitle("");
 //                break;
 //            case R.id.sign_up_ll_activity:
 //                hideKeyboard(mEtNickname);
@@ -237,12 +237,12 @@
 //    public void validateSuccess(boolean isSuccess, String message, int code) {
 //        hideProgressDialog();
 //        if(code==306){
-//            mTvValidateEmail.setText(getString(R.string.signup_tv_duplicate_email));
+//            mTvValidateEmail.setTitle(getString(R.string.signup_tv_duplicate_email));
 //            mLlEmail.setBackgroundResource(R.drawable.bg_border_bottom_red);
 //            mTvValidateEmail.setVisibility(View.VISIBLE);
 //            showCustomToast(getString(R.string.signup_tv_duplicate_email));
 //        }else if(code==307){
-//            mTvValidateNickname.setText(getString(R.string.signup_tv_duplicate_nickname));
+//            mTvValidateNickname.setTitle(getString(R.string.signup_tv_duplicate_nickname));
 //            mLlNickname.setBackgroundResource(R.drawable.bg_border_bottom_red);
 //            mTvValidateNickname.setVisibility(View.VISIBLE);
 //            showCustomToast(getString(R.string.signup_tv_duplicate_nickname));

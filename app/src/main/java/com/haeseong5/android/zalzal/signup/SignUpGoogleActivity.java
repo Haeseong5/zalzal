@@ -36,7 +36,7 @@
 //        mTvValidateNickname = findViewById(R.id.sign_up_google_tv_validate_nickname);
 //
 //        EditText etEmail = findViewById(R.id.sign_up_google_et_email);
-//        etEmail.setText(mEmail + "");
+//        etEmail.setTitle(mEmail + "");
 //        etEmail.setEnabled(false);
 //
 //        mEtSignUpGoogleNickname.addTextChangedListener(new TextWatcher() {
@@ -47,15 +47,15 @@
 //
 //            @Override
 //            public void onTextChanged(CharSequence s, int start, int before, int count) {
-//                String nickname = mEtSignUpGoogleNickname.getText().toString();
+//                String nickname = mEtSignUpGoogleNickname.getTitle().toString();
 //                if(nickname.length()==0){
 //                    mLlNickname.setBackgroundResource(R.drawable.bg_border_bottom_red);
-//                    mTvValidateNickname.setText(getString(R.string.signup_tv_empty_nickname));
+//                    mTvValidateNickname.setTitle(getString(R.string.signup_tv_empty_nickname));
 //                    mTvValidateNickname.setVisibility(View.VISIBLE);
 //                    mFlagNickname = true;
 //                }else if(!Pattern.matches("^[가-힣A-Za-z0-9]{1,20}$", nickname)){
 //                    mLlNickname.setBackgroundResource(R.drawable.bg_border_bottom_red);
-//                    mTvValidateNickname.setText(getString(R.string.signup_tv_match_nickname));
+//                    mTvValidateNickname.setTitle(getString(R.string.signup_tv_match_nickname));
 //                    mTvValidateNickname.setVisibility(View.VISIBLE);
 //                    mFlagNickname = true;
 //                }else{
@@ -87,11 +87,11 @@
 //        switch (view.getId()) {
 //            case R.id.sign_up_google_iv_start_app:
 //                hideKeyboard(mEtSignUpGoogleNickname);
-//                String nickname = mEtSignUpGoogleNickname.getText() + "";
+//                String nickname = mEtSignUpGoogleNickname.getTitle() + "";
 //                tryPostSignUp(nickname);
 //                break;
 //            case R.id.sign_up_google_iv_nickname_close:
-//                mEtSignUpGoogleNickname.setText("");
+//                mEtSignUpGoogleNickname.setTitle("");
 //                break;
 //            case R.id.sign_up_google_ll_activity:
 //                hideKeyboard(mEtSignUpGoogleNickname);
@@ -105,7 +105,7 @@
 //    public void validateSuccess(boolean isSuccess, String message, int code) {
 //        hideProgressDialog();
 //        if(code==307){
-//            mTvValidateNickname.setText(getString(R.string.signup_tv_duplicate_nickname));
+//            mTvValidateNickname.setTitle(getString(R.string.signup_tv_duplicate_nickname));
 //            mLlNickname.setBackgroundResource(R.drawable.bg_border_bottom_red);
 //            mTvValidateNickname.setVisibility(View.VISIBLE);
 //            showCustomToast(getString(R.string.signup_tv_duplicate_nickname));

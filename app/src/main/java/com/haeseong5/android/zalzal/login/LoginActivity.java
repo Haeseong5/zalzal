@@ -93,8 +93,8 @@
 //    }
 //
 //    private void trySignIn() {
-//        String email = mEtLoginEmail.getText().toString();
-//        String pw = mEtLoginPw.getText().toString();
+//        String email = mEtLoginEmail.getTitle().toString();
+//        String pw = mEtLoginPw.getTitle().toString();
 //
 //        if (email == null || email.length() == 0) {
 //            showCustomToast(getString(R.string.login_empty_email));

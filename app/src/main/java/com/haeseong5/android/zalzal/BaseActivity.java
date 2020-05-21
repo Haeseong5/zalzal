@@ -70,16 +70,16 @@ public class BaseActivity extends AppCompatActivity {
 
     }
 
-    private static void setWindowFlag(Activity activity, boolean on) {
-        Window win = activity.getWindow();
-        WindowManager.LayoutParams winParams = win.getAttributes();
-        if (on) {
-            winParams.flags |= WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
-        } else {
-            winParams.flags &= ~WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
-        }
-        win.setAttributes(winParams);
-    }
+//    private static void setWindowFlag(Activity activity, boolean on) {
+//        Window win = activity.getWindow();
+//        WindowManager.LayoutParams winParams = win.getAttributes();
+//        if (on) {
+//            winParams.flags |= WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
+//        } else {
+//            winParams.flags &= ~WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
+//        }
+//        win.setAttributes(winParams);
+//    }
 
 
     public void showCustomToast(final String message) {

@@ -59,7 +59,7 @@
             android:textSize="20sp"
             android:lineSpacingExtra="8dp"
             />
-        <!--            android:text="@string/lorem"-->
+        <!--            android:title="@string/lorem"-->
         <!--            android:padding="@dimen/activity_horizontal_margin"-->
     </androidx.core.widget.NestedScrollView>
 

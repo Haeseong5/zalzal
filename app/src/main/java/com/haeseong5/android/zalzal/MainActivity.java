@@ -1,19 +1,16 @@
 package com.haeseong5.android.zalzal;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.Window;
-import android.view.WindowManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomnavigation.LabelVisibilityMode;
-import com.haeseong5.android.zalzal.fragment.FragmentHome;
+import com.haeseong5.android.zalzal.home.FragmentHome;
 
 public class MainActivity extends BaseActivity {
     BottomNavigationView bottomNavigationView;
@@ -28,6 +25,7 @@ public class MainActivity extends BaseActivity {
         fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction(); //Fragment의 추가, 제거, 변경 등의 작업
 //        fragmentTransaction.add(R.id.fragment_container, FragmentHome.getInstance()).commit(); //첫 프래그먼트 지정
+        fragmentTransaction.replace(R.id.fragment_container, FragmentHome.getInstance()).commit(); //첫 프래그먼트 지정
     }
 
     protected void setBottomNavigationView()
@@ -42,19 +40,19 @@ public class MainActivity extends BaseActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.navigation_menu1: {
-//                        replaceFragment(FragmentHome.getInstance());
+                        replaceFragment(FragmentHome.getInstance());
                         break;
                     }
                     case R.id.navigation_menu2: {
-//                        replaceFragment(FragmentCategory.getInstance());
+                        replaceFragment(FragmentHome.getInstance());
                         break;
                     }
                     case R.id.navigation_menu3: {
-//                        replaceFragment(FragmentAlarm.getInstance());
+                        replaceFragment(FragmentHome.getInstance());
                         break;
                     }
                     case R.id.navigation_menu4: {
-//                        replaceFragment(FragmentProfile.getInstance());
+                        replaceFragment(FragmentHome.getInstance());
                         break;
                     }
                 }
