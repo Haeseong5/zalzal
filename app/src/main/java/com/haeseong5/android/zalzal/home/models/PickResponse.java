@@ -2,7 +2,7 @@ package com.haeseong5.android.zalzal.home.models;
 
 import com.google.gson.annotations.SerializedName;
 
-public class ContentsResponse {
+public class PickResponse {
     @SerializedName("isSuccess")
     private Boolean isSuccess;
     @SerializedName("code")

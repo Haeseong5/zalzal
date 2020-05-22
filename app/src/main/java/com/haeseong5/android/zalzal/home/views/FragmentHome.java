@@ -1,10 +1,12 @@
-package com.haeseong5.android.zalzal.home;
+package com.haeseong5.android.zalzal.home.views;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,18 +15,20 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
+import com.haeseong5.android.zalzal.BaseFragment;
 import com.haeseong5.android.zalzal.R;
-import com.haeseong5.android.zalzal.home.models.ContentsItem;
+import com.haeseong5.android.zalzal.home.adapters.ContentsAdapter;
+import com.haeseong5.android.zalzal.home.adapters.PickAdapter;
+import com.haeseong5.android.zalzal.home.models.PickItem;
 
 import java.util.ArrayList;
 
-public class FragmentHome extends Fragment {
+public class FragmentHome extends BaseFragment implements PickAdapter.OnItemClickListener {
     private String TAG = "FragmentHome";
     private static FragmentHome instance = null;
     private View rootView;
-    private ContentsAdapter contentsAdapter;
-    private ArrayList<ContentsItem> mContentsList;
+    private PickAdapter pickAdapter;
+    private ArrayList<PickItem> mPickList;
 
     private RecyclerView.LayoutManager mLayoutManager;
 
@@ -46,8 +50,8 @@ public class FragmentHome extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_home, container, false);
-        mContentsList = new ArrayList<>();
-        contentsAdapter = new ContentsAdapter(getActivity(), mContentsList);
+        mPickList = new ArrayList<>();
+        pickAdapter = new PickAdapter(this, mPickList);
         initView();
 
         setTestData();
@@ -55,6 +59,10 @@ public class FragmentHome extends Fragment {
     }
 
     private void initView(){
+        initToolbar(rootView);
+        tvToolbarTitle.setText(getString(R.string.home_title));
+        tagsLayout.setVisibility(View.VISIBLE);
+
         tvTag1 = rootView.findViewById(R.id.exp_toolbar_tv_tag1);
         tvTag2 = rootView.findViewById(R.id.exp_toolbar_tv_tag2);
         tvTag3 = rootView.findViewById(R.id.exp_toolbar_tv_tag3);
@@ -67,25 +75,32 @@ public class FragmentHome extends Fragment {
         rvHomeCooking.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
         rvHomeTraining.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
 
-        rvHomeCafe.setAdapter(contentsAdapter);
-        rvHomeCooking.setAdapter(contentsAdapter);
-        rvHomeTraining.setAdapter(contentsAdapter);
+        rvHomeCafe.setAdapter(pickAdapter);
+        rvHomeCooking.setAdapter(pickAdapter);
+        rvHomeTraining.setAdapter(pickAdapter);
     }
 
     void setTestData(){
-        mContentsList.add(new ContentsItem(null, "Title1", "sub title"));
-        mContentsList.add(new ContentsItem(null, "Title2", "sub title"));
-        mContentsList.add(new ContentsItem(null, "Title3", "sub title"));
-        mContentsList.add(new ContentsItem(null, "Title4", "sub title"));
-        mContentsList.add(new ContentsItem(null, "Title5", "sub title"));
-        mContentsList.add(new ContentsItem(null, "Title6", "sub title"));
-        mContentsList.add(new ContentsItem(null, "Title7", "sub title"));
-        mContentsList.add(new ContentsItem(null, "Title8", "sub title"));
+        mPickList.add(new PickItem(null, "Title1", "sub title"));
+        mPickList.add(new PickItem(null, "Title2", "sub title"));
+        mPickList.add(new PickItem(null, "Title3", "sub title"));
+        mPickList.add(new PickItem(null, "Title4", "sub title"));
+        mPickList.add(new PickItem(null, "Title5", "sub title"));
+        mPickList.add(new PickItem(null, "Title6", "sub title"));
+        mPickList.add(new PickItem(null, "Title7", "sub title"));
+        mPickList.add(new PickItem(null, "Title8", "sub title"));
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        contentsAdapter.notifyDataSetChanged();
+        pickAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        printToast(String.valueOf(position));
+        Intent intent = new Intent(getActivity(), ContentsActivity.class);
+        startActivity(intent);
     }
 }

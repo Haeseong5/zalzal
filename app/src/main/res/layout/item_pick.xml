@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="10dp"
+    android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+            <androidx.cardview.widget.CardView
+                card:cardCornerRadius="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="22dp">
+                <ImageView
+                    android:id="@+id/item_pick_iv_image"
+                    android:layout_width="155dp"
+                    android:layout_height="205dp"
+                    android:background="#D3D3D3"
+                    android:src="@drawable/logo"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true" />
+          </androidx.cardview.widget.CardView>
+
+    <TextView
+                android:id="@+id/item_pick_tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/colorBlack"
+                android:title="title"/>
+            <TextView
+                android:id="@+id/item_pick_tv_sub_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/colorBlack"
+                android:title="subTitle title"/>
+        </LinearLayout>
+
+</LinearLayout>

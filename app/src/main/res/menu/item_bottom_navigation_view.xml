@@ -9,7 +9,7 @@
         android:title="Home" />
     <item
         android:id="@+id/navigation_menu2"
-        android:icon="@drawable/selector_like"
+        android:icon="@drawable/selector_like_tab"
         app:showAsAction="ifRoom"
         android:enabled="true"
         android:title="Like" />
@@ -33,7 +33,7 @@
 <!--        android:title="Home" />-->
 <!--    <item-->
 <!--        android:id="@+id/navigation_menu2"-->
-<!--        android:icon="@drawable/selector_like"-->
+<!--        android:icon="@drawable/selector_like_tab"-->
 <!--        app:showAsAction="ifRoom"-->
 <!--        android:enabled="true"-->
 <!--        android:title="Like" />-->
