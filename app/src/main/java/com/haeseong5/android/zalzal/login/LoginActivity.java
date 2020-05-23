@@ -9,10 +9,8 @@
 //import androidx.annotation.NonNull;
 //import androidx.annotation.Nullable;
 //
-//import com.google.android.gms.auth.api.signin.GoogleSignIn;
 //import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-//import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-//import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+//
 //import com.google.android.gms.common.SignInButton;
 //import com.google.android.gms.common.api.ApiException;
 //import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,25 +18,19 @@
 //import com.google.android.material.snackbar.Snackbar;
 //import com.google.firebase.auth.AuthCredential;
 //import com.google.firebase.auth.AuthResult;
-//import com.google.firebase.auth.FirebaseAuth;
 //import com.google.firebase.auth.FirebaseUser;
 //import com.google.firebase.auth.GoogleAuthProvider;
 //import com.haeseong5.android.zalzal.BaseActivity;
 //import com.haeseong5.android.zalzal.R;
 //import com.haeseong5.android.zalzal.login.interfaces.LoginActivityView;
-//import com.makeus.android.endgame.R;
-//import com.makeus.android.endgame.src.BaseActivity;
-//import com.makeus.android.endgame.src.login.interfaces.LoginActivityView;
-//import com.makeus.android.endgame.src.main.HomeActivity;
-//import com.makeus.android.endgame.src.signup.SignUpActivity;
-//import com.makeus.android.endgame.src.signup.SignUpGoogleActivity;
+//
 //
 //
 //public class LoginActivity extends BaseActivity implements LoginActivityView {
 //
 //    private final int RC_SIGN_IN = 100;
-//    GoogleSignInClient mGoogleSignInClient;
-//    private FirebaseAuth mAuth;
+////    GoogleSignInClient mGoogleSignInClient;
+////    private FirebaseAuth mAuth;
 //
 //    BackPressCloseHandler mBackPressCloseHandler;
 //    SignInButton mBtnGoogleSignIn;
@@ -46,12 +38,12 @@
 //    EditText mEtLoginEmail, mEtLoginPw;
 //    ImageView mIvLoginBtn;
 //
-//    String mGoogleEmail;
+////    String mGoogleEmail;
 //
 //    @Override
 //    protected void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
-////        setContentView(R.layout.activity_login);
+//        setContentView(R.layout.activity_login);
 ////
 ////        mEtLoginEmail = findViewById(R.id.login_et_email);
 ////        mEtLoginPw = findViewById(R.id.login_et_pw);
@@ -59,17 +51,6 @@
 //
 //        mBackPressCloseHandler = new BackPressCloseHandler(this);
 //
-//        // Initialize Firebase Auth
-//        mAuth = FirebaseAuth.getInstance();
-//
-//        // Configure Google Sign In
-////        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-////                .requestIdToken(getString(R.string.default_web_client_id))
-////                .requestEmail()
-////                .build();
-////
-////        mBtnGoogleSignIn = findViewById(R.id.login_btn_google_sign_in);
-////        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 //
 //        mBtnGoogleSignIn.setOnClickListener(new View.OnClickListener() {
 //            @Override

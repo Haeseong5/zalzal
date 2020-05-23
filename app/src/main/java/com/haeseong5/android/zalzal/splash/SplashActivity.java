@@ -16,6 +16,7 @@ import com.google.android.play.core.tasks.OnFailureListener;
 import com.google.android.play.core.tasks.OnSuccessListener;
 import com.google.android.play.core.tasks.Task;
 import com.haeseong5.android.zalzal.BaseActivity;
+import com.haeseong5.android.zalzal.MainActivity;
 import com.haeseong5.android.zalzal.splash.interfaces.SplashActivityView;
 
 
@@ -80,22 +81,25 @@ public class SplashActivity extends BaseActivity implements SplashActivityView {
     }
 
     void tryGetAutoLogin() {
-//        SplashService splashService = new SplashService(this);
-//        splashService.getAutoLogin();
+        SplashService splashService = new SplashService(this);
+        splashService.getAutoLogin();
     }
 
     @Override
     public void validateGetAutoLoginSuccess(boolean isSuccess, String message) {
         if (isSuccess) {
-//            Intent homeIntent = new Intent(SplashActivity.this, HomeActivity.class);
-//            homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//            homeIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//            startActivity(homeIntent);
+            Intent homeIntent = new Intent(SplashActivity.this, MainActivity.class);
+            homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            homeIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            printToast("로그인 성공.");
+            startActivity(homeIntent);
         } else {
 //            Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
-//            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//            startActivity(intent);
+            Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
         }
     }
 
@@ -104,7 +108,7 @@ public class SplashActivity extends BaseActivity implements SplashActivityView {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == MY_REQUEST_CODE) {
             if (resultCode != RESULT_OK) {
-                showCustomToast("논란종결을 사용하기 위해서는 업데이트가 필요해요");  //사용자에게 알려주기
+//                showCustomToast("논란종결을 사용하기 위해서는 업데이트가 필요해요");  //사용자에게 알려주기
                 finishAffinity(); // 앱 종료
             }
         }
@@ -133,9 +137,9 @@ public class SplashActivity extends BaseActivity implements SplashActivityView {
 
     @Override
     public void validateFailure(String message) {
-//        Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
-//        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//        startActivity(intent);
+        Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 }

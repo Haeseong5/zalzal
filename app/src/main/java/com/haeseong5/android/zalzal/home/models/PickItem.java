@@ -3,13 +3,12 @@ package com.haeseong5.android.zalzal.home.models;
 import com.google.gson.annotations.SerializedName;
 
 public class PickItem {
-    @SerializedName("bannerImg")
+    @SerializedName("imgUrl")
     private String image;
-    @SerializedName("bannerText")
+    @SerializedName("title")
     private String title;
-    @SerializedName("bannerSub")
+    @SerializedName("subTitle")
     private String subTitle;
-
     public PickItem(String image, String title, String subTitle) {
         this.image = image;
         this.title = title;
@@ -38,5 +37,14 @@ public class PickItem {
 
     public void setSubTitle(String subTitle) {
         this.subTitle = subTitle;
+    }
+
+    @Override
+    public String toString() {
+        return "PickItem{" +
+                "image='" + image + '\'' +
+                ", title='" + title + '\'' +
+                ", subTitle='" + subTitle + '\'' +
+                '}';
     }
 }

@@ -11,6 +11,8 @@ import android.view.MenuItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomnavigation.LabelVisibilityMode;
 import com.haeseong5.android.zalzal.home.views.FragmentHome;
+import com.haeseong5.android.zalzal.like.FragmentLike;
+import com.haeseong5.android.zalzal.me.FragmentMe;
 import com.haeseong5.android.zalzal.pick.FragmentPick;
 
 public class MainActivity extends BaseActivity {
@@ -45,7 +47,7 @@ public class MainActivity extends BaseActivity {
                         break;
                     }
                     case R.id.navigation_menu2: {
-                        replaceFragment(FragmentHome.getInstance());
+                        replaceFragment(FragmentLike.getInstance());
                         break;
                     }
                     case R.id.navigation_menu3: {
@@ -53,7 +55,7 @@ public class MainActivity extends BaseActivity {
                         break;
                     }
                     case R.id.navigation_menu4: {
-                        replaceFragment(FragmentHome.getInstance());
+                        replaceFragment(FragmentMe.getInstance());
                         break;
                     }
                 }

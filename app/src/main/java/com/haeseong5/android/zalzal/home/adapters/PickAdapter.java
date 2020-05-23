@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.haeseong5.android.zalzal.R;
 import com.haeseong5.android.zalzal.home.models.PickItem;
 
@@ -16,17 +17,17 @@ import java.util.ArrayList;
 
 public class PickAdapter extends RecyclerView.Adapter<PickAdapter.ViewHolder> {
     private ArrayList<PickItem> mPickList;
-
+    private Context context;
     private PickAdapter.OnItemClickListener mClickListener = null;
 
     public interface OnItemClickListener {
         void onItemClick(int position) ;
     }
 
-    public PickAdapter(OnItemClickListener listener, ArrayList<PickItem> pickItems) {
+    public PickAdapter(OnItemClickListener listener, ArrayList<PickItem> pickItems, Context context) {
         this.mClickListener = listener ;
         this.mPickList = pickItems;
-
+        this.context = context;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -56,7 +57,7 @@ public class PickAdapter extends RecyclerView.Adapter<PickAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, final int position) {
         holder.tvTitle.setText(mPickList.get(position).getTitle());
         holder.tvSubTitle.setText(mPickList.get(position).getTitle());
-//        Glide.with(context).load(mPickList.get(position).getImgURL1()).into(holder.ivPhoto);
+        Glide.with(context).load(mPickList.get(position).getImage()).into(holder.ivThumb);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

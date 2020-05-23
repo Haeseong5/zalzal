@@ -6,13 +6,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import com.haeseong5.android.zalzal.BaseActivity;
 import com.haeseong5.android.zalzal.R;
 import com.haeseong5.android.zalzal.home.adapters.ContentsAdapter;
 import com.haeseong5.android.zalzal.home.models.ContentsItem;
-import com.haeseong5.android.zalzal.home.models.PickItem;
 
 import java.util.ArrayList;
 

@@ -40,7 +40,7 @@
         android:layout_marginBottom="40dp"
         android:orientation="horizontal"
         android:gravity="center"
-        android:visibility="visible"
+        android:visibility="gone"
         android:layout_gravity="bottom">
         <LinearLayout
             android:layout_width="wrap_content"
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:paddingHorizontal="5dp"
-                android:text="Tag1"
+                android:text="#홈카페"
                 android:textColor="@color/colorTagText"
                 android:textSize="14sp"
                 android:background="@drawable/tag_shape"/>
@@ -70,7 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Tag2"
+                android:text="#홈쿠킹"
                 android:paddingHorizontal="5dp"
                 android:textColor="@color/colorTagText"
                 android:textSize="14sp"
@@ -87,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:paddingHorizontal="5dp"
-                android:text="Tag3"
+                android:text="#홈트레이닝"
                 android:textColor="@color/colorTagText"
                 android:textSize="14sp"
                 android:background="@drawable/tag_shape"/>

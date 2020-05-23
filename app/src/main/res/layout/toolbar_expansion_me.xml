@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/background_gradient_2"
+            />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="45dp">
+            <TextView
+                android:id="@+id/me_toolbar_tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                android:text="내 정보"/>
+            <TextView
+                android:id="@+id/me_toolbar_tv_sub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp"
+                android:text="sub title"
+                android:layout_marginTop="18dp"
+                android:visibility="gone"
+                android:layout_below="@id/me_toolbar_tv_title"/>
+        </RelativeLayout>
+    </FrameLayout>
+</LinearLayout>

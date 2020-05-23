@@ -2,6 +2,8 @@ package com.haeseong5.android.zalzal.home.models;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+
 public class PickResponse {
     @SerializedName("isSuccess")
     private Boolean isSuccess;
@@ -10,7 +12,41 @@ public class PickResponse {
     @SerializedName("message")
     private String message;
     @SerializedName("result")
-    private String jwt;
+    private ArrayList<Pick> result;
+
+    public class Pick {
+        @SerializedName("categoryId")
+        private int categoryId;
+        @SerializedName("categoryTitle")
+        private String categoryTitle;
+        @SerializedName("picks")
+        private ArrayList<PickItem> pickItems = null;
+
+        public int getCategoryId() {
+            return categoryId;
+        }
+
+        public void setCategoryId(int categoryId) {
+            this.categoryId = categoryId;
+        }
+
+        public String getCategoryTitle() {
+            return categoryTitle;
+        }
+
+        public void setCategoryTitle(String categoryTitle) {
+            this.categoryTitle = categoryTitle;
+        }
+
+        public ArrayList<PickItem> getPickItems() {
+            return pickItems;
+        }
+
+        public void setPickItems(ArrayList<PickItem> pickItems) {
+            this.pickItems = pickItems;
+        }
+
+    }
 
     public Boolean isSuccess() {
         return isSuccess;
@@ -36,11 +72,16 @@ public class PickResponse {
         this.message = message;
     }
 
-    public String getJwt() {
-        return jwt;
+
+    public Boolean getSuccess() {
+        return isSuccess;
     }
 
-    public void setJwt(String jwt) {
-        this.jwt = jwt;
+    public ArrayList<Pick> getResult() {
+        return result;
+    }
+
+    public void setResult(ArrayList<Pick> result) {
+        this.result = result;
     }
 }
