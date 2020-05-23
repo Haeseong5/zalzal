@@ -1,8 +1,10 @@
-package com.haeseong5.android.zalzal.login.models;
+package com.haeseong5.android.zalzal.home.models;
 
 import com.google.gson.annotations.SerializedName;
 
-public class LoginResponse {
+import java.util.ArrayList;
+
+public class HeartResponse {
     @SerializedName("isSuccess")
     private Boolean isSuccess;
     @SerializedName("code")
@@ -12,25 +14,25 @@ public class LoginResponse {
     @SerializedName("result")
     private Result result;
 
-    public class Result{
-        @SerializedName("jwt")
-        private String jwt;
+    public class Result {
+        @SerializedName("status")
+        private String status;
 
-        public String getJwt() {
-            return jwt;
+        public String getStatus() {
+            return status;
         }
 
-        public void setJwt(String jwt) {
-            this.jwt = jwt;
+        public void setStatus(String status) {
+            this.status = status;
         }
     }
 
-    public Boolean isSuccess() {
+    public Boolean getSuccess() {
         return isSuccess;
     }
 
-    public void setSuccess(Boolean isSuccess) {
-        this.isSuccess = isSuccess;
+    public void setSuccess(Boolean success) {
+        isSuccess = success;
     }
 
     public Integer getCode() {
@@ -47,10 +49,6 @@ public class LoginResponse {
 
     public void setMessage(String message) {
         this.message = message;
-    }
-
-    public Boolean getSuccess() {
-        return isSuccess;
     }
 
     public Result getResult() {

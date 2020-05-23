@@ -21,7 +21,7 @@ public interface LoginRetrofitInterface {
 //            @Query("content") final String content
 //    );
 //
-    @POST("/endgame/normal/signin")
+    @POST("/user")
     Call<LoginResponse> postLogin(@Body HashMap<String, Object> hashMap);
 
     @POST("/endgame/google/signin")

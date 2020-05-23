@@ -1,6 +1,7 @@
 package com.haeseong5.android.zalzal;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.util.Log;
 import android.view.View;
@@ -29,8 +30,13 @@ public class BaseFragment extends Fragment {
             mProgressDialog.setMessage(getString(R.string.loading));
             mProgressDialog.setIndeterminate(true);
         }
+        try {
+            mProgressDialog.show();
+        }catch (Exception e){
+            Log.e("TAG", String.valueOf(e));
+        }
 
-        mProgressDialog.show();
+
     }
 
     public void hideProgressDialog() {

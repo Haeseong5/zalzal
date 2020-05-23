@@ -29,7 +29,9 @@
 
         <activity android:name=".home.views.ContentsActivity" />
         <activity android:name=".MainActivity">
+
         </activity>
+        <activity android:name=".login.LoginActivity"/>
     </application>
 
 </manifest>

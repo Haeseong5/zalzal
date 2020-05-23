@@ -26,6 +26,8 @@ public class LoginService {
 
     void postLogin(String email, String pw) {
         HashMap<String, Object> hashMap = new HashMap<>();
+        email = "test@naver.com";
+        pw = "test123";
         hashMap.put("email", email);
         hashMap.put("pw", pw);
 
@@ -38,10 +40,10 @@ public class LoginService {
                     mLoginActivityView.validateFailure(null);
                     return;
                 }
-                String jwt = loginResponse.getJwt() + "";
+                String jwt = loginResponse.getResult().getJwt() + "";
                 if (jwt != null && jwt.length() != 0) {
                     SharedPreferences.Editor editor = sSharedPreferences.edit();
-                    editor.putString(X_ACCESS_TOKEN, loginResponse.getJwt()).apply();
+                    editor.putString(X_ACCESS_TOKEN, jwt).apply();
                 }
                 mLoginActivityView.validateSuccess(loginResponse.isSuccess(), loginResponse.getCode(), loginResponse.getMessage());
             }
@@ -66,10 +68,10 @@ public class LoginService {
                     mLoginActivityView.validateFailure(null);
                     return;
                 }
-                String jwt = loginResponse.getJwt() + "";
+                String jwt = loginResponse.getResult().getJwt() + "";
                 if (jwt != null && jwt.length() != 0) {
                     SharedPreferences.Editor editor = sSharedPreferences.edit();
-                    editor.putString(X_ACCESS_TOKEN, loginResponse.getJwt()).apply();
+                    editor.putString(X_ACCESS_TOKEN, loginResponse.getResult().getJwt()).apply();
                 }
                 mLoginActivityView.validateSuccess(loginResponse.isSuccess(), loginResponse.getCode(), loginResponse.getMessage());
             }

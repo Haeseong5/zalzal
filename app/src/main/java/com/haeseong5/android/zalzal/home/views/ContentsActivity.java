@@ -23,7 +23,7 @@ public class ContentsActivity extends BaseActivity implements ContentsActivityVi
 
     private static final String TAG = "ContentsActivity";
     private RecyclerView rvContents;
-    private ContentsAdapter mContentsAdpater;
+    private ContentsAdapter mContentsAdapter;
     private ArrayList<ContentsItem> mContentsList;
     private CollapsingToolbarLayout collapsingToolbarLayout;
     private int pick_id = 0;
@@ -41,10 +41,15 @@ public class ContentsActivity extends BaseActivity implements ContentsActivityVi
 
         initView();
     }
-    private void tryGetContentsList(int id){
+    private void tryGetContentsList(int pick_id){
         showProgressDialog();
         ContentsService contentsService = new ContentsService(this);
-        contentsService.getContentsList(id);
+        contentsService.getContentsList(pick_id);
+    }
+
+    public void tryPostHeart(int video_id) {
+        ContentsService contentsService = new ContentsService(this);
+        contentsService.postHeart(video_id);
     }
 
     private void initView(){
@@ -78,14 +83,17 @@ public class ContentsActivity extends BaseActivity implements ContentsActivityVi
         printLog(TAG, String.valueOf(isSuccess));
         hideProgressDialog();
         mContentsList = result.getContentsItems();
-        mContentsAdpater = new ContentsAdapter(this, mContentsList);
-        rvContents.setAdapter(mContentsAdpater);
+        mContentsAdapter = new ContentsAdapter(this, mContentsList);
+        rvContents.setAdapter(mContentsAdapter);
+    }
+
+    @Override
+    public void validateSuccessHeart(String text, int code, boolean isSuccess, String status) {
 
     }
 
     @Override
     public void validateFailure(String message) {
         hideProgressDialog();
-
     }
 }

@@ -59,7 +59,7 @@
 //                    mTvValidateNickname.setVisibility(View.VISIBLE);
 //                    mFlagNickname = true;
 //                }else{
-//                    mLlNickname.setBackgroundResource(R.drawable.bg_border_bottom_white);
+//                    mLlNickname.setBackgroundResource(R.drawable.bg_border_bottom_bk);
 //                    mTvValidateNickname.setVisibility(View.INVISIBLE);
 //                    mFlagNickname = false;
 //                }

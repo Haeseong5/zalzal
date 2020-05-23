@@ -73,7 +73,7 @@
 //                    mTvValidateNickname.setVisibility(View.VISIBLE);
 //                    mFlagNickname = true;
 //                }else{
-//                    mLlNickname.setBackgroundResource(R.drawable.bg_border_bottom_white);
+//                    mLlNickname.setBackgroundResource(R.drawable.bg_border_bottom_bk);
 //                    mTvValidateNickname.setVisibility(View.INVISIBLE);
 //                    mFlagNickname = false;
 //                }
@@ -105,7 +105,7 @@
 //                    mTvValidateEmail.setVisibility(View.VISIBLE);
 //                    mFlagEmail = true;
 //                }else{
-//                    mLlEmail.setBackgroundResource(R.drawable.bg_border_bottom_white);
+//                    mLlEmail.setBackgroundResource(R.drawable.bg_border_bottom_bk);
 //                    mTvValidateEmail.setVisibility(View.INVISIBLE);
 //                    mFlagEmail = false;
 //                }
@@ -137,7 +137,7 @@
 //                    mTvValidatePw.setVisibility(View.VISIBLE);
 //                    mFlagPw = true;
 //                }else{
-//                    mLlPw.setBackgroundResource(R.drawable.bg_border_bottom_white);
+//                    mLlPw.setBackgroundResource(R.drawable.bg_border_bottom_bk);
 //                    mTvValidatePw.setVisibility(View.INVISIBLE);
 //                    mFlagPw = false;
 //                }
@@ -170,7 +170,7 @@
 //                    mTvValidatePwConfirm.setVisibility(View.VISIBLE);
 //                    mFlagPwConfirm = true;
 //                }else{
-//                    mLlPwConfirm.setBackgroundResource(R.drawable.bg_border_bottom_white);
+//                    mLlPwConfirm.setBackgroundResource(R.drawable.bg_border_bottom_bk);
 //                    mTvValidatePwConfirm.setVisibility(View.INVISIBLE);
 //                    mFlagPwConfirm = false;
 //                }

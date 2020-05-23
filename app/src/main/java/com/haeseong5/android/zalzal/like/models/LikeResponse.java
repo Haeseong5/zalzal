@@ -1,8 +1,10 @@
-package com.haeseong5.android.zalzal.login.models;
+package com.haeseong5.android.zalzal.like.models;
 
 import com.google.gson.annotations.SerializedName;
 
-public class LoginResponse {
+import java.util.ArrayList;
+
+public class LikeResponse {
     @SerializedName("isSuccess")
     private Boolean isSuccess;
     @SerializedName("code")
@@ -12,16 +14,26 @@ public class LoginResponse {
     @SerializedName("result")
     private Result result;
 
-    public class Result{
-        @SerializedName("jwt")
-        private String jwt;
+    public class Result {
+        @SerializedName("imgUrl")
+        private String imageUrl;
+        @SerializedName("videos")
+        private ArrayList<LikeItem> likeItems = null;
 
-        public String getJwt() {
-            return jwt;
+        public String getImageUrl() {
+            return imageUrl;
         }
 
-        public void setJwt(String jwt) {
-            this.jwt = jwt;
+        public void setImageUrl(String imageUrl) {
+            this.imageUrl = imageUrl;
+        }
+
+        public ArrayList<LikeItem> getLikeItems() {
+            return likeItems;
+        }
+
+        public void setLikeItems(ArrayList<LikeItem> likeItems) {
+            this.likeItems = likeItems;
         }
     }
 
@@ -48,6 +60,7 @@ public class LoginResponse {
     public void setMessage(String message) {
         this.message = message;
     }
+
 
     public Boolean getSuccess() {
         return isSuccess;

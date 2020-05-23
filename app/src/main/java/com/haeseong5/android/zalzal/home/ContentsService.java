@@ -4,6 +4,9 @@ import android.util.Log;
 import com.haeseong5.android.zalzal.home.interfaces.HomeRetrofitInterface;
 import com.haeseong5.android.zalzal.home.interfaces.ContentsActivityView;
 import com.haeseong5.android.zalzal.home.models.ContentsResponse;
+import com.haeseong5.android.zalzal.home.models.HeartResponse;
+
+import java.util.HashMap;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -44,6 +47,32 @@ public class ContentsService {
             public void onFailure(Call<ContentsResponse> call, Throwable t) {
                 contentsActivityView.validateFailure("fail");
                 Log.e("Service s", "요청실패",t);
+            }
+        });
+    }
+
+    public void postHeart(int video_id) {
+        final HomeRetrofitInterface mainRetrofitInterface = getRetrofit().create(HomeRetrofitInterface.class);
+        mainRetrofitInterface.postHeart(video_id).enqueue(new Callback<HeartResponse>() {
+            @Override
+            public void onResponse(Call<HeartResponse> call, Response<HeartResponse> response) {
+                final HeartResponse heartResponse = response.body();
+                if (heartResponse == null) {
+                    contentsActivityView.validateFailure(null);
+                    return;
+                }
+
+                contentsActivityView.validateSuccessHeart(
+                        heartResponse.getMessage(),
+                        heartResponse.getCode(),
+                        heartResponse.getSuccess(),
+                        heartResponse.getResult().getStatus()
+                        );
+            }
+
+            @Override
+            public void onFailure(Call<HeartResponse> call, Throwable t) {
+                contentsActivityView.validateFailure(null);
             }
         });
     }
