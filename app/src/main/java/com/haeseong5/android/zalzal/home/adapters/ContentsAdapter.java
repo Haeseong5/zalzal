@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.haeseong5.android.zalzal.R;
 import com.haeseong5.android.zalzal.home.models.ContentsItem;
 
@@ -58,11 +59,11 @@ public class ContentsAdapter extends RecyclerView.Adapter<ContentsAdapter.ViewHo
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
         holder.tvTitle.setText(mContentsList.get(position).getTitle());
-        holder.tvWriter.setText(mContentsList.get(position).getTitle());
-//        Glide.with(context).load(mContentsList.get(position).getImgURL1()).into(holder.ivPhoto);
+        holder.tvWriter.setText(mContentsList.get(position).getWriter());
+        Glide.with((Context)mClickListener).load(mContentsList.get(position).getThumbnail()).into(holder.ivThumb);
 
         //item click listener
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        holder.ivThumb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mClickListener.onItemClick(position);

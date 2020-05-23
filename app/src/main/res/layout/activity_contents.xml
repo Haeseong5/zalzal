@@ -17,6 +17,7 @@
 
 
         <net.opacapp.multilinecollapsingtoolbar.CollapsingToolbarLayout
+            android:id="@+id/contents_collapsing_toolbar_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
@@ -61,7 +62,6 @@
                 android:id="@+id/contents_recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="17dp"
                 android:layout_marginTop="40dp"/>
 
         </LinearLayout>

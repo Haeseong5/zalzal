@@ -22,8 +22,6 @@ public class HomeService {
     }
 
     public void getPicks() {
-        Log.d("Service s", "try get picks");
-
         final HomeRetrofitInterface homeRetrofitInterface = getRetrofit().create(HomeRetrofitInterface.class);
         homeRetrofitInterface.getPicks().enqueue(new Callback<PickResponse>() {
             @Override
@@ -45,4 +43,6 @@ public class HomeService {
             }
         });
     }
+
+
 }

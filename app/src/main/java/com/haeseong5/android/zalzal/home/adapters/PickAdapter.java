@@ -21,8 +21,9 @@ public class PickAdapter extends RecyclerView.Adapter<PickAdapter.ViewHolder> {
     private PickAdapter.OnItemClickListener mClickListener = null;
 
     public interface OnItemClickListener {
-        void onItemClick(int position) ;
+        void onItemClick(int pick_id) ;
     }
+
 
     public PickAdapter(OnItemClickListener listener, ArrayList<PickItem> pickItems, Context context) {
         this.mClickListener = listener ;
@@ -62,7 +63,7 @@ public class PickAdapter extends RecyclerView.Adapter<PickAdapter.ViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mClickListener.onItemClick(position);
+                mClickListener.onItemClick(mPickList.get(position).getPickId());
             }
         });
     }

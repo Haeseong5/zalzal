@@ -3,6 +3,8 @@ package com.haeseong5.android.zalzal.home.models;
 import com.google.gson.annotations.SerializedName;
 
 public class PickItem {
+    @SerializedName("pickId")
+    private int pickId;
     @SerializedName("imgUrl")
     private String image;
     @SerializedName("title")
@@ -13,6 +15,14 @@ public class PickItem {
         this.image = image;
         this.title = title;
         this.subTitle = subTitle;
+    }
+
+    public int getPickId() {
+        return pickId;
+    }
+
+    public void setPickId(int pickId) {
+        this.pickId = pickId;
     }
 
     public String getImage() {

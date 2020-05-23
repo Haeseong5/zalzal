@@ -43,7 +43,6 @@ public class FragmentPick extends BaseFragment implements ContentsAdapter.OnItem
         rootView = inflater.inflate(R.layout.fragment_pick, container, false);
         mContentsList = new ArrayList<>();
         mContentsAdapter = new ContentsAdapter(this, mContentsList);
-        setTestData();
         initView();
 //        bottomSheetFragment = new DemoBottomSheetFragment();
 //        FragmentManager fragmentManager  = getActivity().getSupportFragmentManager();
@@ -62,18 +61,6 @@ public class FragmentPick extends BaseFragment implements ContentsAdapter.OnItem
         recyclerView.setAdapter(mContentsAdapter);
     }
 
-    void setTestData() {
-        mContentsList.add(new ContentsItem(null, "Title1", "sub title", null));
-        mContentsList.add(new ContentsItem(null, "Title2", "sub title", null));
-        mContentsList.add(new ContentsItem(null, "Title3", "sub title", null));
-        mContentsList.add(new ContentsItem(null, "Title4", "sub title", null));
-        mContentsList.add(new ContentsItem(null, "Title5", "sub title", null));
-        mContentsList.add(new ContentsItem(null, "Title1", "sub title", null));
-        mContentsList.add(new ContentsItem(null, "Title2", "sub title", null));
-        mContentsList.add(new ContentsItem(null, "Title3", "sub title", null));
-        mContentsList.add(new ContentsItem(null, "Title4", "sub title", null));
-        mContentsList.add(new ContentsItem(null, "Title5", "sub title", null));
-    }
 
     @Override
     public void onItemClick(int position) {

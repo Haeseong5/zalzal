@@ -2,6 +2,7 @@ package com.haeseong5.android.zalzal.home.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -13,17 +14,30 @@ import com.haeseong5.android.zalzal.home.models.ContentsItem;
 import kr.co.prnd.YouTubePlayerView;
 
 public class VideoActivity extends AppCompatActivity {
-    private final String VIDEO_ID = "3QjxIwUemgo";
+    private String VIDEO_ID = "";
     private YouTubePlayerView mYouTubePlayerView;
-    private TextView tvTitle, tvWriter, tvContent;
+    private TextView tvTitle, tvWriter, tvContent, tvTags;
     private ImageView ivLike;
     private ContentsItem mContents;
+
+    private String title, keywords, writer, url, like, content;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video);
         initView();
+
+        Intent intent = getIntent();
+        if (intent != null){
+            title = intent.getStringExtra("title");
+            keywords = intent.getStringExtra("keywords");
+            writer = intent.getStringExtra("writer");
+            VIDEO_ID =  intent.getStringExtra("url");
+            like = intent.getStringExtra("like");
+            content = intent.getStringExtra("content");
+        }
+
 
         mYouTubePlayerView.play(VIDEO_ID,null);
         setTestData();
@@ -36,6 +50,7 @@ public class VideoActivity extends AppCompatActivity {
         tvContent = findViewById(R.id.video_tv_content);
         tvWriter = findViewById(R.id.video_tv_writer);
         ivLike = findViewById(R.id.video_iv_like);
+        tvTags = findViewById(R.id.video_tv_tags);
     }
 
     public int getStatusBarHeight() {
@@ -59,11 +74,9 @@ public class VideoActivity extends AppCompatActivity {
     }
     void setTestData(){
         mContents = new ContentsItem();
-        mContents.setContent("내용 테스트 ㅎㅎ!!!!!!!!!!!!!");
-        mContents.setTitle("맛있는 커피~");
-        mContents.setWriter("writer");
-        tvTitle.setText(mContents.getTitle());
-        tvWriter.setText(mContents.getWriter());
-        tvContent.setText(mContents.getContent());
+        tvTitle.setText(title);
+        tvWriter.setText(writer);
+        tvContent.setText(content);
+        tvTags.setText(keywords);
     }
 }

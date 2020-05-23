@@ -3,42 +3,31 @@ package com.haeseong5.android.zalzal.home.models;
 import com.google.gson.annotations.SerializedName;
 
 public class ContentsItem {
-    @SerializedName("bannerImg")
-    private String image;
-    @SerializedName("bannerText")
+
+    @SerializedName("videoId")
+    private int videoId;
+    @SerializedName("title")
     private String title;
-    @SerializedName("bannerSub")
+    @SerializedName("publisher")
     private String writer;
-
+    @SerializedName("heart")
     private String like;
-
+    @SerializedName("content")
     private String content;
-
+    @SerializedName("url")
     private String url;
+    @SerializedName("thumbnail")
+    private String thumbnail;
 
-    public ContentsItem(){}
-    public ContentsItem(String image, String title, String writer, String like) {
-        this.image = image;
-        this.title = title;
-        this.writer = writer;
-        this.like = like;
+    @SerializedName("keywords")
+    private String keywords;
+
+    public int getVideoId() {
+        return videoId;
     }
 
-    public ContentsItem(String image, String title, String writer, String like, String content, String url) {
-        this.image = image;
-        this.title = title;
-        this.writer = writer;
-        this.like = like;
-        this.content = content;
-        this.url = url;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
+    public void setVideoId(int videoId) {
+        this.videoId = videoId;
     }
 
     public String getTitle() {
@@ -79,5 +68,21 @@ public class ContentsItem {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public String getThumbnail() {
+        return thumbnail;
+    }
+
+    public void setThumbnail(String thumbnail) {
+        this.thumbnail = thumbnail;
+    }
+
+    public String getKeywords() {
+        return keywords;
+    }
+
+    public void setKeywords(String keywords) {
+        this.keywords = keywords;
     }
 }

@@ -1,5 +1,6 @@
 package com.haeseong5.android.zalzal.home.interfaces;
 
+import com.haeseong5.android.zalzal.home.models.ContentsResponse;
 import com.haeseong5.android.zalzal.home.models.PickResponse;
 
 import java.util.ArrayList;

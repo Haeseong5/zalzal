@@ -104,9 +104,11 @@ public class FragmentHome extends BaseFragment implements HomeActivityView, Pick
     }
 
     @Override
-    public void onItemClick(int position) {
-        printToast(String.valueOf(position));
+    public void onItemClick(int pick_id) {
+        printToast(String.valueOf(pick_id));
         Intent intent = new Intent(getActivity(), ContentsActivity.class);
+        intent.putExtra("pick_id", pick_id);
+        printToast(String.valueOf(pick_id));
         startActivity(intent);
     }
 
